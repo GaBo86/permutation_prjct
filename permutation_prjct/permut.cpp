@@ -8,23 +8,23 @@
 void permutation::get_Next_Permt (vector<int>& pVec)
 	 {
 	
-		int n = pVec.size(), k, l;
-		for (k = n - 2; k >= 0; k--) {
-			if (pVec[k] < pVec[k + 1]) {
-				break;
+		int num = pVec.size(), i, j;
+		for (i = num - 2; i >= 0; i--) {
+			if (pVec[i] < pVec[i + 1]) {
+				throw invalid_argument("Permutation cannot be achieved");
 			}
 		}
-		if (k < 0) {
+		if (i < 0) {
 			reverse(pVec.begin(), pVec.end());
 		}
 		else {
-			for (l = n - 1; l > k; l--) {
-				if (pVec[l] > pVec[k]) {
-					break;
+			for (j = num - 1; j > i; j--) {
+				if (pVec[j] > pVec[i]) {
+					throw invalid_argument("Permutation cannot be achieved");
 				}
 			}
-			swap(pVec[k], pVec[l]);
-			reverse(pVec.begin() + k + 1, pVec.end());
+			swap(pVec[i], pVec[j]);
+			reverse(pVec.begin() + i + 1, pVec.end());
 		}
 	}
 		
