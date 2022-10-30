@@ -61,7 +61,7 @@ namespace UTest
 			}
 		}
 
-		TEST_METHOD(TestMethod3)
+		TEST_METHOD(TestMethod4)
 		{
 
 			vector<int> arr = { 1,1,1 };
